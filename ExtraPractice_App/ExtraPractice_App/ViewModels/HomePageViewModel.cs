@@ -24,7 +24,7 @@ namespace ExtraPractice_App.ViewModels
                 var nav = new NavigationParameters();
                 nav.Add("Music", param);
 
-                await NavigationService.NavigateAsync("/DetailPage", nav);
+                await NavigationService.NavigateAsync(NavigationConstants.DetailPage, nav);
 
             });
         }

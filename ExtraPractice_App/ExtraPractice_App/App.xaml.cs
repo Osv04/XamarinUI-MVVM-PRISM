@@ -15,7 +15,7 @@ namespace ExtraPractice_App
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync(new Uri("/MenuTabbedPage", UriKind.Relative));
+            NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedMenu, UriKind.Relative));
         }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
