@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExtraPractice_App.Views.MenuTabbedPage"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" xmlns:local="clr-namespace:ExtraPractice_App.Views"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+             android:TabbedPage.BarItemColor ="Gray"
+            android:TabbedPage.BarSelectedItemColor ="Black">
+    <TabbedPage.Children>
+        <NavigationPage Title="Today" IconImageSource="today">
+            <x:Arguments>
+                <local:HomePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Yoga" IconImageSource="yoga">
+            <x:Arguments>
+                <local:HomePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Meditation" IconImageSource="meditation">
+            <x:Arguments>
+                <local:HomePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Meal" IconImageSource="meal">
+            <x:Arguments>
+                <local:HomePage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Profile" IconImageSource="profile">
+            <x:Arguments>
+                <local:HomePage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>

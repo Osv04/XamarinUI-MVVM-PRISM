@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExtraPractice_App.Views.HomePage"
+             x:Name="homePage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Quick Help" 
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand" 
+                   FontAttributes="Bold"
+                   FontSize="22"
+                   TextColor="Black"
+                   Grid.ColumnSpan="2"/>
+            <Image Source="search"
+                   HeightRequest="30"
+                   Grid.Column="3"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="EndAndExpand"/>
+            
+            
+            <Frame Grid.Row="1"
+                   Margin="10,20"
+                   CornerRadius="15"
+                   Padding="10">
+                <Image Source="breathe"/>
+            </Frame>
+            <Label Text="Breathe"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="End"
+                   TextColor="Black"
+                   Grid.Row="1"/>
+            <Frame Grid.Row="1"
+                   Grid.Column="1"
+                   Margin="10,20"
+                   CornerRadius="15"
+                   Padding="10">
+                <Image Source="sleep"/>
+            </Frame>
+            <Label Text="Sleep"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="End"
+                   TextColor="Black"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
+            <Frame Grid.Row="1"
+                   Grid.Column="2"
+                   Padding="10"
+                   CornerRadius="15"
+                   Margin="10,20">
+                <Image Source="anxiety"/>
+            </Frame>
+            <Label Text="Anxiety"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="End"
+                   TextColor="Black"
+                   Grid.Row="1"
+                   Grid.Column="2"/>
+            <Frame Grid.Row="1"
+                   Grid.Column="3"
+                   Padding="10"
+                   CornerRadius="15"
+                   Margin="10,20">
+                <Image Source="stress"/>
+            </Frame>
+            <Label Text="Stress"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="End"
+                   TextColor="Black"
+                   Grid.Row="1"
+                   Grid.Column="3"/>
+            
+            
+            <Label Text="Daily meditations" 
+                   HorizontalOptions="StartAndExpand" 
+                   FontAttributes="Bold"
+                   FontSize="22"
+                   TextColor="Black"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="4"
+                   Margin="0,20"/>
+            <Frame Grid.Row="3"
+                   Grid.ColumnSpan="4"
+                   Padding="0"
+                   CornerRadius="20"
+                   Margin="0">
+                <Image Source="restAndRelax.jpg"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   Aspect="AspectFill"
+                   HeightRequest="180"/>
+            </Frame>
+
+                <Label Text="Rest and Relax"
+                   HorizontalOptions="StartAndExpand" 
+                       VerticalOptions="EndAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="15"  
+                   TextColor="Black"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="4"
+                   Margin="10,20"/>
+                <Image Source="blackClock"  HeightRequest="18"
+                     HorizontalOptions="StartAndExpand" 
+                       VerticalOptions="EndAndExpand"
+                      Grid.Row="3"
+                   Grid.ColumnSpan="4"
+                  Margin="10,5"/>
+
+                <Label Text="30 mins"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="EndAndExpand"
+                       TextColor="Black"
+                   FontSize="13"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="2"
+                   Margin="30,5"/>
+
+                <Label Text="New Music" 
+                   HorizontalOptions="StartAndExpand" 
+                   FontAttributes="Bold"
+                   FontSize="22"
+                   TextColor="Black"
+                   Grid.Row="4"
+                   Grid.ColumnSpan="2"
+                   Margin="0,20"/>
+                <Label Text="View all"
+                   HorizontalOptions="EndAndExpand" 
+                   VerticalOptions="EndAndExpand"
+                   FontSize="13"
+                   TextColor="Gray"
+                   Grid.Row="4"
+                   Grid.Column="2"
+                   Grid.ColumnSpan="2"
+                   Margin="0,20, 0, 10"/>
+
+
+                <CollectionView ItemsSource="{Binding Musics}"  
+                            Grid.Row="5"
+                            Grid.ColumnSpan="4">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal">
+                    </GridItemsLayout>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                                <Frame BackgroundColor="White" CornerRadius="10" Padding="0" Margin="15">
+                                    <StackLayout>
+                                        <Image Source="{Binding Photo}"
+                                               HeightRequest="80"
+                                            Aspect="AspectFill"  />
+                                        <Label Text="{Binding Name}"    
+                                           FontAttributes="Bold"
+                                               TextColor="Black"
+                                               Margin="5,0"/>
+                                        <StackLayout Orientation="Horizontal" Margin="3,0">
+                                            <Image Source="blackClock"
+                                                   HeightRequest="20"/>
+                                            <Label Text="{Binding Lenght}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Path=BindingContext.GoToDetailPage, Source={x:Reference homePage}}"
+                                                      CommandParameter="{Binding .}"/>
+                            </StackLayout.GestureRecognizers> 
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

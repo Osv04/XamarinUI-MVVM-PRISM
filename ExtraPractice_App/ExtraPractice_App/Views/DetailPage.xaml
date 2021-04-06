@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExtraPractice_App.Views.DetailPage"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="True"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="5">
+                <StackLayout Orientation="Horizontal">
+                    <ImageButton Source="back" Margin="0,20" 
+                                 HorizontalOptions="Start" 
+                                 HeightRequest="25"
+                                 BackgroundColor="Transparent"
+                                 Command="{Binding GoBackCommand}"/>
+                    <Label Text="{Binding SelectedMusic.Name}" 
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" 
+                   FontSize="27"
+                   TextColor="Black"/>
+                </StackLayout>
+            
+            <Image Source="{Binding SelectedMusic.Photo}"/>
+            <Grid BackgroundColor="White" Padding="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="upload" HeightRequest="30"/>
+                <Image Source="calendar"
+                       Grid.Column="1" HeightRequest="30"/>
+                <Image Source="heart"
+                       Grid.Column="2" HeightRequest="30"/>
+            </Grid>
+            <Label Text="{Binding SelectedMusic.Title}" 
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand" 
+                   FontSize="22"
+                   TextColor="#1ABC9C"
+                   Margin="10"/>
+            <Label Text="{Binding SelectedMusic.Description}" 
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand" 
+                   FontSize="18"
+                   Margin="10"
+                   TextColor="Black"/>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</ContentPage>
